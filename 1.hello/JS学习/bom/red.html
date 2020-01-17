@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body style="background-color: red; height: 2000px;">
+		<button onclick="func1()" name="" value="">跳转到蓝页面</button>
+		<button onclick="go()">返回两页历史记录</button>
+		<script type="text/javascript">
+			function func1(){
+				window.location.href="blue.html"
+			}
+			function go(){
+				window.history.go(-2)
+			}
+			
+			window.onload=function(){
+				alert("加载完成")
+			}
+			alert("加载中")
+			window.onscroll=function(){
+				console.log('发生了滚动')
+				
+				var a=document.documentElement.scrollTop || document.body.scrollTop
+				console.log(a)
+			}
+		</script>
+	</body>
+</html>

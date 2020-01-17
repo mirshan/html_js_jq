@@ -1,0 +1,39 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+#box1{
+	width: 300px;
+	height: 40px;
+	background-color: hotpink;
+}
+#box2{
+	width: 300px;
+	height: 40px;
+	background-color: darkseagreen;
+}
+
+.red{
+	background-color: red;
+}
+.yellow{
+	background-color: yellow;
+}
+.blue{
+	background-color: blue;
+}
+
+.header{
+	background-color: pink;
+}
+
+#ch{
+		width: 200px;
+		height: 100px;
+		background: #8FBC8F;
+	}
+#ch1{
+		width: 300px;
+		height: 120px;
+		background: red;
+	}

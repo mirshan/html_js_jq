@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>菜鸟教程(runoob.com)</title>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script>
+$(document).ready(function(){
+//$("button").bind({
+//  click:function(){$("mv").slideToggle();},
+//  mouseover:function(){$("body").css("background-color","#E9E9E4");},  
+//  mouseout:function(){$("body").css("background-color","#FFFFFF");}  
+//});
+  
+  
+  
+var a=document.getElementById('mmm')
+  a.addEventListener('click',function(){
+  	var b=document.getElementById('ddd')
+  	b.innerHTML='asldkfj';
+  });  
+  
+ $('button').bind('click',function(){
+ 	$('div').html('我是jq改变了DIV的内容')
+ })
+  
+  
+  $("#ch").mouseover(function(){
+  	$(this).css("background","red")
+  })
+  $("button").click(function(){
+  	$('p').toggle()
+  	$('#ch').slideUp(2000)
+  	$('body').css('Position','relative')
+  	$('mv').css({background:'green', color:'white',position:'absolute'})
+	$('mv').animate({
+		left:'+=25px',
+      	height:'+=15px',
+      	width:'+=15px'
+	})
+  })
+});
+
+
+
+</script>
+</head>
+<body>
+
+<p>这是一个段落。</p>
+<p>这是一个段落。</p>
+<mv>这是一个MV段落。</mv>
+<p>这是一个段落。</p>
+<p>这是一个段落。</p>
+<div id="ddd">这是一个段落。</div>
+<div id="ch">这是一个段落。</div>
+
+<button id="mmm">点我！</button>
+
+</body>
+</html>

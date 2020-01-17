@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<script type="text/javascript" src="js/jquery-3.4.1.js">
+	</script>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+	<body>
+		<script type="text/javascript">
+			//ready相当于onload需要等页面全加载完再执行
+			$(document).ready(function() {
+				//alert("mirs is a good man")
+				//dom对象
+				var jsDiv = document.getElementById("box1")
+				jsDiv.innerHTML = "DOM: Mirs is a good man"
+				//jquery
+				var $jqDiv = $("#box2").html("JQUERY: Mirs is a nice man")
+
+				//JQ转DOM
+				var jsDiv1 = $jqDiv[0] //第一种转的方法
+				//				console.log(jsDiv1)
+				//				console.log($jqDiv[0])
+				var jsDiv2 = $jqDiv.get(0) //第二种JQ转DOM的方法
+
+				//DOM转JQ
+				var $jqDiv = $(jsDiv)
+
+				//选择器
+				//				ID选择器,相当于document.getElementById("#box1")
+				var $jqDiv1 = $("#box1").html("hah45454aha") //赋值后修改内容为。。。
+
+				//元素选择器，相当于document.getElementsByTagName("div"),.html时会修改所有DIV内容
+				var $jqDivs = $("div")
+
+				//类选择器，相当于document.getElementsByClassName(".box")
+				var $jqaps = $(".ap")
+
+				//复合选择器，加个逗号，选择多个,或的关系
+				var $jqdivsaps = $(".ap,div")
+
+				//通配符选择器
+				var $jqall = $("*")
+
+				//层次选择器,祖先下所有后代都被选择
+				$("ul li")
+				//父子选择器，只选择直接子元素
+				$("ul>li")
+				//next选择器，选择指定元素紧挨着的元素
+				$("#box+div") //选择ID为box1紧挨着的DIV元素
+
+				//过滤器
+				var $jqpp = $(".pp:first").html("first修改了第一个pp内容")  //所有class为pp的第一个修改内容
+				var $jqpp = $(".pp:last").html("last修改了最后一个pp内容")  //所有class为pp的第一个修改内容
+				var $jqpp = $(".pp:even").addClass("red")			//所有偶数行添加一个class
+				var $jqpp = $(".pp:odd").addClass("yellow")			//所有偶数行添加一个class
+				var $jqpp = $(".pp:eq(3)").addClass("blue")			//eq等于
+				var $jqpp = $(".pp:gt(4)").addClass("yellow")			//gt大于
+				var $jqpp = $(".pp:lt(2)").addClass("yellow")			//lt小于
+				var $jqpp = $("*:header").addClass("header")			//设置标题样式
+//				var $jqpp = $("p:not(.pp)").addClass("blue")   //把P标签里所有不是.pp的设置为蓝色样式
+				
+				
+//				内容过滤器
+//				var $jqpp=$("p:contains('sunck')").addClass("blue") //是否包含文本
+//				var $jqpp=$("p:empty").addClass("blue") //文本内容为空的换颜色
+//				var $jqpp=$("p:parent").addClass("blue") //文本内容不为空的换颜色
+//				var $jqpp=$("input:has(.aaa)").addClass("blue") //class里input的标签
+				
+//				可见性过虑器
+				var $jqpp=$("input:hidden") //文本内容为空
+				var $jqpp=$("input:visible")//文本内容为空
+				$jqpp.val()    //取元素的value值，只能取一个，设置全设置
+				$jqpp.val("asdfasdfasdf")  //带上参数就是设置值
+				
+				
+				
+				
+			})
+			//会先执行，不用等加载完再执行
+			//alert("mirs")
+		</script>
+
+		<div id="box1">
+
+		</div>
+		<div id="box2">
+
+		</div>
+		<p class="pp">aaaaaaaaaaa</p>
+		<p class="pp">bbbbbbbbbbb</p>
+		<p class="pp">ccccccccccc</p>
+		<p class="pp">ddddddddddd</p>
+		<p class="pp">eeeeeeeeeee</p>
+		<p class="pp">fffffffffff</p>
+		<p class="pp"><h1>h1标题</h1>
+		<h2>h2标题</h2>
+		<h3>h3标题</h3>
+		</p>
+		
+		
+		<p class="pap">aaaaaaaaaaa</p>
+		<p class="pap">bbbbbbbbbbb</p>
+		<p class="pap">ccccccccccc</p>
+		<p class="pap">ddddddddddd</p>
+		<p class="pap">eeeeeeeeeee</p>
+		<p class="pap">fffffffffff</p>
+		<section>asdfasdf</section>
+		<section>asdfasdf</section>
+		<section>asdfasdf</section>
+		
+		<script type="text/javascript">
+			$(".pap:odd").addClass("red")
+			$('section').click(function(){
+				$(this).css('background','yellow')
+			})
+			
+		</script>
+	</body>
+
+</html>

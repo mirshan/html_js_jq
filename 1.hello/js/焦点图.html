@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>焦点图可以用swiper，生成js效果</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#box {
+				width: 550px;
+				height: 300px;
+				border: dashed 1px blanchedalmond;
+				position: relative;
+				/*background-image: url(../img/1.jpg);*/
+				background-repeat: no-repeat;
+				background-size: cover;
+				margin: auto;
+			}
+			
+			#left,
+			#right {
+				width: 30px;
+				height: 50px;
+				background-color: rgba(0, 0, 0, 0.2);
+				position: absolute;
+				line-height: 50px;
+				text-align: center;
+				top: 125px;
+				color: white;
+				border-radius: 25px;
+				display: none;
+			}
+			
+			#left {
+				left: 20px;
+			}
+			
+			#right {
+				right: 20px;
+			}
+			
+			#list {
+				height: 20px;
+				position: absolute;
+				bottom: 20px;
+				left: 20%;
+			}
+			
+			#list li {
+				display: inline-block;
+				width: 20px;
+				margin-left: 30px;
+				background-color: rgba(255, 255, 255, 0.2);
+				line-height: 20px;
+				text-align: center;
+				border-radius: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box">
+			<img src="../img/1.jpg" width="550px" height="300px" id="pic" />
+			<div id="left">
+				< </div>
+					<div id="right">
+						>
+					</div>
+					<ul id="list">
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+						<li>5</li>
+					</ul>
+
+			</div>
+
+			<script type="text/javascript">
+				var jsbox = document.getElementById("box")
+				var jspic = document.getElementById("pic")
+				var jsleft = document.getElementById("left")
+				var jsright = document.getElementById("right")
+				var jslisArr = document.getElementsByTagName("li")
+
+				//第一个li设置为红色
+				jslisArr[0].style.backgroundColor = "orangered"
+
+				//启动一个定时器更换背景图片
+				var currentPage = 1
+				var timer = setInterval(startLoop,1000)
+				function startLoop(){
+					currentPage++
+					changePage()			//生成一个函数方便操作
+				}
+				function changePage() {    //更换背景函数
+					if(currentPage>5){
+						currentPage=1
+					}else if(currentPage==0){
+						currentPage=5
+					}
+					jspic.src = "../img/" + currentPage + ".jpg"
+					//小圆点也变色
+					for (var i=0;i<jslisArr.length;i++){
+						jslisArr[i].style.backgroundColor="rgba(255,255,255,0.2)"
+					}
+					jslisArr[currentPage-1].style.backgroundColor="orangered"
+				}
+				
+				//添加鼠标移入停止事件
+				jsbox.addEventListener("mouseover",overFunc,false)
+				function overFunc(){
+					//停止定时器
+					clearInterval(timer)
+					
+					//显示左右
+					jsleft.style.display="block"
+					jsright.style.display="block"
+				}
+				jsbox.addEventListener("mouseout",outFunc,false)
+				function outFunc(){
+					//重启定时器
+					timer=setInterval(startLoop,1000)
+					//显示左右
+					jsleft.style.display="none"
+					jsright.style.display="none"
+				}
+				
+				
+				//鼠标移入左右按钮变深,移出变浅
+				jsleft.addEventListener("mouseover",function(){
+					this.style.backgroundColor="rgba(0,0,0,0.6)"
+				},false)
+				jsright.addEventListener("mouseover",function(){
+					this.style.backgroundColor="rgba(0,0,0,0.6)"
+				},false)
+				jsleft.addEventListener("mouseout",function(){
+					this.style.backgroundColor="rgba(0,0,0,0.2)"
+				},false)
+				jsright.addEventListener("mouseout",function(){
+					this.style.backgroundColor="rgba(0,0,0,0.2)"
+				},false)
+				//鼠标点击按钮
+				jsleft.addEventListener("click",function(){
+					currentPage--
+					changePage()
+				},false)
+				jsright.addEventListener("click",function(){
+					currentPage++
+					changePage()
+				},false)
+				
+				//点击li事件
+				for(var i=0;i<jslisArr.length;i++){
+					jslisArr[i].index=i+1
+					jslisArr[i].addEventListener("mouseover",function(){
+						//currentPage=parseInt(this.innerHTML)	   //数字就是1到5如果显示其他，就不行了
+						currentPage=parseInt(this.index)
+						changePage()
+					},false)
+				}
+				
+			</script>
+	</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.4.1.js">
+	</script>
+	</head>
+	<body>
+		<form action="#" >
+			 <input type="checkbox" checked="checked" id="ck" value="" />1
+			 <input type="checkbox" checked="checked" name="ck" id="ck" value="" />2
+			 <input type="checkbox" name="ck" id="ck" value="" />3<br />
+			 <input type="text" name="text" id="text" value="" /><br />
+			 <input type="button" name="submit" id="submit" value="提交" /><br />
+			 <select name="sc" onchange="func1()">
+			 	<option value="1">1</option>
+			 	<option value="2">2</option>
+			 	<option value="3">3</option>
+			 	<option value="4">4</option>
+			 	<option value="5">5</option>
+			 </select>
+			 <script type="text/javascript">
+			 	function func(){
+			 	console.log("selection has changed")
+			 }
+			 	var subm=document.getElementById("")
+			 	subm.addEventListener("click",function(){
+			 		alert("提交内容")
+			 	},false)
+			</script>
+			
+			<script type="text/javascript">
+			 function func1(){
+			 		console.log($("select option:selected").val())  //select下的所有option，被选中的值
+			 	}
+			 
+			 	$("#submit").bind("click",function(){
+			 		alert("内容提交")
+			 	})
+			 
+			 $(document).ready(function(){
+			 	//表单过滤器，以表单状态来过滤
+			 	var $jqobj=$("input:checked") //选中的多选表单
+			 	var $jqobj=$("input:disabled")  //所有不可用的标签
+			 	var $jqobj=$("input:enabled")   //所有可用的标签
+			 	var $jqobj=$("input:selected")   //所有可用的标签
+				//first-child only-child last-child nth-child与first last等基本一样			 	
+			 	var $jqobj=$("ul li:nth-child(2)").html("用nth已选中并个性li2的值 ")
+			 	console.log($jqobj)
+			 	//属性选择器
+			 	var $jqobj=$("input[name]")    //所有带name属性的
+			 	var $jqobj=$("input[name=submit]")  //所有name属性为submit的标签
+			 	var $jqobj=$("input[name!=submit]")  //所有name属性不为submit的标签
+			 	var $jqobj=$("input[name*=c]")  //所有name属性含有c的标签
+			 	var $jqobj=$("input[name^=c]")  //所有name属性以c开头的标签
+			 	var $jqobj=$("input[name$=c]")  //所有name属性含以c结尾的标签
+			 	//表单选择器
+			 	var $jqobj=$("form :input")   //form后面的空格很重要，加空格相当于祖先过滤，不加的话就相当于对form的过滤条件
+			 	var $jqobj=$(":button")     //所有button标签，不限于表单内
+			 	var $jqobj=$(":checkbox")     //所有的多选，还有:file/:hidden/:radio/:reset/:submit/:password
+			 	$jqobj.attr("checked","checked")  //attr设置属性的方法
+			 	console.log($jqobj)	
+			 })
+			 </script>
+		</form>
+		<p>aaaaaaaaaaa</p>
+		<p>bbbbbbbbbbb</p>
+		<p>ccccccccccc</p>
+		<p>ddddddddddd</p>
+		<p>eeeeeeeeeee</p>
+		<p>fffffffffff</p>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</body>
+</html>

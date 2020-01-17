@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		#div1{
+			width: 100px;
+			height: 200px;
+			background-color: hotpink;
+			
+		}
+	</style>
+	<body>
+		<div id="div1">
+			<p>我是第一个</p>
+			<p>我是第二个</p>
+			<p>我是第三个</p>
+			<p>我是第四个</p></div>
+		
+		
+		<script type="text/javascript">
+			var div=document.getElementById("div1")
+			var a=document.createElement("p")
+			a.innerHTML="直接插入一个P标签"
+			a.style.backgroundColor="yellowgreen"
+			div.appendChild(a)								//插入子结点
+			div.setAttribute("style","width: 300px;")		//设置宽度
+			
+			var b=document.createElement("p")
+			b.innerHTML="最后一个元素前插入"
+			b.style.backgroundColor="yellowgreen"
+			div.insertBefore(b,div.lastChild)				//最后一个结点前插入
+			//div.replaceChild(b,div.lastChild)               //替换最后一个结点
+			
+			var newDiv=div.cloneNode(true)         //注意加true是克隆父结点及内部子结点
+			div.insertBefore(newDiv,div.firstChild)
+			//newDiv.style.backgroundColor="blue";
+			
+			  
+		</script>
+	</body>
+</html>

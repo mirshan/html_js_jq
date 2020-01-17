@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p><span id="demo"></span></p>
+		<script type="text/javascript">
+			//存储数据：
+myObj = { name:"Bill Gates",  age:62, city:"Seattle" };
+myJSON =  JSON.stringify(myObj);
+localStorage.setItem("testJSON", myJSON);
+
+//接收数据：
+text = localStorage.getItem("testJSON");
+obj =  JSON.parse(text);
+document.getElementById("demo").innerHTML = obj.name;
+		</script>
+	</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>homework</title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			body{
+				background: url(img/bc.jpg)  center top;   /*center是背景图水平居中，垂直顶部对齐*/
+			}
+			#logo{
+				height: 50px;
+				background:url(img/1.png);
+				margin-left: 10px;
+				margin-right: 10px;
+				margin-bottom: 10px;
+				margin-top: 10px;
+			}
+
+			#native ul li{
+				list-style-type: none;			/*去掉前面的点*/
+				background-color: #118899; 
+				width: 120px;
+				text-align: center;
+				height: 35px;
+				display: inline-block;			/*转成行内元素,横向排列*/
+				line-height: 35px;
+				color: white;
+				margin-left: 10px;
+			}
+			#native ul li:hover{
+				background-color: #8A2BE2;          /*导航条变色*/
+			}
+			
+			
+			
+			#left{
+				margin-left: 10px;
+				margin-top: 10px;
+				width: 300px;
+				height: 100%;
+				background:transparent;			  /*背景透明*/
+				float: left;
+			}
+			#left>ul>li{							/*left下第一层ul和li*/
+				background: #FFFF00;
+				color: black;
+				width: 300px;
+				height: 50px;
+				margin-left: 0px;
+				margin-bottom: 30px;
+				line-height: 50px;				/*与高相同文字会上下居中*/
+				text-align: center;
+				border-radius: 5px;				/*圆角*/
+			}
+			#left>ul>li:hover{
+				background: #0066CC;				/*鼠标经过变色*/
+			}
+			#right{
+				margin-right: 10px;
+				padding: 10px 20px;
+				/*width: 680px;*/
+				border: solid 10px rgba(255,255,255,0.5);		/*设置边框,实心宽度和颜色*/
+				border-radius: 6px;
+				float: left;
+				background-color: #7FFFD4;
+				margin-left: 20px;
+				margin-top: 10px;
+				line-height: 30px;
+				
+				min-width: 680px; width: auto;!important; _width:680px;    /*宽度自动适应，设置最小宽度*/
+				max-width: 800px;										/*最大宽度*/
+				min-height:410px; height:auto!important; height:400px;  /*高度自动适应*/
+													  
+				
+				/*自动换行*/
+				word-wrap: break-word;word-break: break-all;overflow: hidden;
+				
+			}
+			#down{
+				float: left;
+				margin: 0px 10px;
+				min-width: 1040px;
+				width: auto;
+				max-width: 1180px;						/*最小宽度980最大宽度是1380然后换行*/
+				min-height: 100px;
+				border: 10px solid rgba(333,333,333,0.3);
+				line-height: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="body">
+			<div id="header">
+				<div id="logo">
+					logo,后面其实是背景图
+				</div>
+				<div id="native">
+					<ul>
+						<li>home page |</li>
+						<li>first page |</li>
+						<li>second page |</li>
+						<li>third page |</li>
+						<li>forth page |</li>
+						<li>fifth page |</li>
+						<li>sixth page |</li>
+						<li>seventh page |</li>
+					</ul>
+				</div>
+			</div>
+			<div id="body">
+				<div id="up">
+				<div id="left">
+					<ul>
+						<li>1</li>				
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+						<li>5</li>
+						<li>6</li>
+					</ul>
+				</div>
+				<div id="right">dfddfdfdfdd<br />
+				
+				dfdfdf<br />
+				dfdfdf<br />
+				
+				</div>
+				<!--<div id='right'>asdfdfdfdfddddddddddddddddddddddddddddddddddddddddfdfdfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</div>-->
+			</div>
+			<div id="down">
+				copy right&copy; Mirs hancopy right&copy; Mirs hancopy right&copy; Mirs hancopy right&copy; Mirs hancopy right&copy; Mirs hancopy right&copy; Mirs hancopy right&copy; Mirs hancopy right&copy; Mirs hancopy right&copy; Mirs hancopy right&copy; Mirs hancopy right&copy; Mirs hancopy right&copy; Mirs hancopy right&copy; Mirs hancopy right&copy; Mirs han
+			</div>
+			</div>
+		</div>
+	</body>
+</html>

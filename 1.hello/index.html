@@ -1,0 +1,562 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="&#x27;HTML标签&#x27; &#x27;CSS盒模型&#x27; &#x27;块级元素和行内元素的定义&#x27; &#x27;块级元素和行内元素的分类&#x27; HTML标签 html标签定义： 是由一对尖括号包裹的单词构成,例如: \. 标签不区分大小写\ 和 \" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>HTML中块级元素和行内元素的总结和区分。 - 阿秋阿邱 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=sqi5FxOybx6gjGoG6Zfy1wD-0AwznLNLYOVx7Y9tIN0" />
+    <link id="MainCss" rel="stylesheet" href="/skins/loveisintheair/bundle-loveisintheair.min.css?v=uI4derS8SzeklkcuGM9ZZcviZI9ud2nNvmccYFPeg2g" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/yanqiu/custom.css?v=mabP20H06Lgd0YeONJffv8PbeDM=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/loveisintheair/bundle-loveisintheair-mobile.min.css?v=Fulp5oGK9aHdU2yqgt6ypOn1ul0At8tRocTLFN1q7rk" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/yanqiu/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/yanqiu/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/yanqiu/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=b7sM0DJziDHg1bHu-IBV4-VgBUQ7XTgLDoGlmGpzIwo"></script>
+    <script>
+        var currentBlogId = 420320;
+        var currentBlogApp = 'yanqiu';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<center>
+<div id="home">
+	<a href="1、基础.html" target="_blank">回到基础知识总结页面</a>
+<div id="header">
+	<div id="blogTitle">
+	<a href="https://www.cnblogs.com/yanqiu/"><img id="blogLogo" src="/skins/loveisintheair/images/logo.gif" alt="" /></a>			
+		
+
+
+
+
+
+		
+	
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div class="clear"></div>
+	<div id="topicList">
+		<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class = "postTitle">
+			
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/yanqiu/p/8987126.html">HTML中块级元素和行内元素的总结和区分。</a>
+
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			
+<div id="cnblogs_post_body" align="left">
+    <ul>
+<li><a href="#html标签">HTML标签</a></li>
+<li><a href="#css盒模型">CSS盒模型</a></li>
+<li><a href="#块级元素和行内元素的定义">块级元素和行内元素的定义</a></li>
+<li><a href="#块级元素和行内元素的分类">块级元素和行内元素的分类</a></li>
+</ul>
+<h2 id="html标签">HTML标签</h2>
+<p>html标签定义：</p>
+<ul>
+<li>是由一对尖括号包裹的单词构成,例如: &lt;html&gt;.</li>
+<li>标签不区分大小写&lt;html&gt; 和 &lt;HTML&gt;, 推荐使用小写.</li>
+<li>标签分为两部分: 开始标签&lt;html&gt; 和 结束标签&lt;/html&gt;, 两个标签之间的部分我们叫做标签体.</li>
+<li>有些标签功能比较简单,使用一个标签即可,这种标签叫做自闭和标签,例如: &lt;br/&gt;&lt;hr/&gt;&lt;input/&gt;&lt;img/&gt;</li>
+<li>标签可以嵌套,例如:&lt;a&gt;&lt;b&gt;&lt;b/&gt;&lt;a/&gt;;但是不能交叉嵌套,例如:&lt;a&gt;&lt;b&gt;&lt;a/&gt;&lt;b/&gt;</li>
+</ul>
+<p>所有的html标签参考w3school中的<a href="http://www.w3school.com.cn/tags/index.asp">html手册</a>.</p>
+<h2 id="css盒模型">css盒模型</h2>
+<p>所有HTML元素可以看作盒子，在CSS中，&quot;box model&quot;这一术语是用来设计和布局时使用。CSS盒模型本质上是一个盒子，封装周围的HTML元素，它包括：边距，边框，填充，和实际内容。盒模型允许我们在其它元素和周围元素边框之间的空间放置元素。<br />
+下面的图片说明了盒子模型(Box Model)：<br />
+<img src="img/WX20191113-132730@2x.png/" width="400px"/></p>
+<p>不同部分的说明：</p>
+<ul>
+<li>Margin(外边距) - 清除边框外的区域，外边距是透明的。</li>
+<li>Border(边框) - 围绕在内边距和内容外的边框。</li>
+<li>Padding(内边距) - 清除内容周围的区域，内边距是透明的。</li>
+<li>Content(内容) - 盒子的内容，显示文本和图像。</li>
+</ul>
+<p>怪异模式和标准模式下的css盒模型的解析：</p>
+<ul>
+<li>标准模式中，网页元素的宽度是有padding,border,width三者的宽度相加决定的。</li>
+<li>怪异模式中，width包含padding和border的宽度，即网页宽度为width。</li>
+</ul>
+<p>css3新增box-sizing属性，用于更改用于计算元素宽度和高度的默认的 CSS 盒子模型：</p>
+<ul>
+<li>content-box，默认值。如果你设置一个元素的宽为100px，那么这个元素的内容区会有100px宽，并且任何边框和内边距的宽度都会被增加到最后绘制出来的元素宽度中，即<strong>标准模式下的盒模型</strong>。</li>
+<li>border-box 告诉浏览器去理解你设置的边框和内边距的值是包含在width内的。也就是说，如果你将一个元素的width设为100px,那么这100px会包含其它的border和padding，内容区的实际宽度会是width减去border + padding的计算值，即<strong>怪异模式下的盒模型</strong>。</li>
+</ul>
+<h2 id="块级元素和行内元素的定义">块级元素和行内元素的定义</h2>
+<p>块级元素？</p>
+<ul>
+<li>总是在新行上开始；</li>
+<li>高度，行高以及外边距和内边距都可控制；</li>
+<li>宽度缺省是它的容器的100%，除非设定一个宽度。</li>
+<li>它可以容纳内联元素和其他块元素</li>
+</ul>
+<p>行内元素？</p>
+<ul>
+<li>和其他元素都在一行上；</li>
+<li>高，行高及外边距和内边距不可改变；</li>
+<li>宽度就是它的文字或图片的宽度，不可改变</li>
+<li>内联元素只能容纳文本或者其他内联元素</li>
+</ul>
+<p>对行内元素，需要注意如下：</p>
+<ul>
+<li>设置宽度width 无效。</li>
+<li>设置高度height 无效，可以通过line-height来设置。</li>
+<li>设置margin 只有左右margin有效，上下无效。</li>
+<li>设置padding 只有左右padding有效，上下则无效。注意元素范围是增大了，但是对元素周围的内容是没影响的。</li>
+</ul>
+<p>通过display属性对行内元素和块级元素进行切换(主要看第2.3.4个值)：</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">值</th>
+<th style="text-align: left;">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">none</td>
+<td style="text-align: left;">此元素不会被显示。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>block</strong></td>
+<td style="text-align: left;">此元素将显示为块级元素，此元素前后会带有换行符。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>inline</strong></td>
+<td style="text-align: left;">默认。此元素会被显示为内联元素，元素前后没有换行符。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>inline-block</strong></td>
+<td style="text-align: left;">行内块元素。（CSS2.1 新增的值）</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">list-item</td>
+<td style="text-align: left;">此元素会作为列表显示。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">run-in</td>
+<td style="text-align: left;">此元素会根据上下文作为块级元素或内联元素显示。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">compact</td>
+<td style="text-align: left;">CSS 中有值 compact，不过由于缺乏广泛支持，已经从 CSS2.1 中删除。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">marker</td>
+<td style="text-align: left;">CSS 中有值 marker，不过由于缺乏广泛支持，已经从 CSS2.1 中删除。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">table</td>
+<td style="text-align: left;">此元素会作为块级表格来显示（类似 &lt;table&gt;），表格前后带有换行符。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">inline-table</td>
+<td style="text-align: left;">此元素会作为内联表格来显示（类似 &lt;table&gt;），表格前后没有换行符。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">table-row-group</td>
+<td style="text-align: left;">此元素会作为一个或多个行的分组来显示（类似 &lt;tbody&gt;）。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">table-header-group</td>
+<td style="text-align: left;">此元素会作为一个或多个行的分组来显示（类似 &lt;thead&gt;）。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">table-footer-group</td>
+<td style="text-align: left;">此元素会作为一个或多个行的分组来显示（类似 &lt;tfoot&gt;）。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">table-row</td>
+<td style="text-align: left;">此元素会作为一个表格行显示（类似 &lt;tr&gt;）。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">table-column-group</td>
+<td style="text-align: left;">此元素会作为一个或多个列的分组来显示（类似 &lt;colgroup&gt;）。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">table-column</td>
+<td style="text-align: left;">此元素会作为一个单元格列显示（类似 &lt;col&gt;）</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">table-cell</td>
+<td style="text-align: left;">此元素会作为一个表格单元格显示（类似 &lt;td&gt; 和 &lt;th&gt;）</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">table-caption</td>
+<td style="text-align: left;">此元素会作为一个表格标题显示（类似 &lt;caption&gt;）</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">inherit</td>
+<td style="text-align: left;">规定应该从父元素继承 display 属性的值。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="块级元素和行内元素的分类">块级元素和行内元素的分类</h2>
+<p>html中的块级元素：</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">标签</th>
+<th style="text-align: left;">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">&lt;address&gt;</td>
+<td style="text-align: left;">定义地址。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;article&gt;</td>
+<td style="text-align: left;">定义文章。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;aside&gt;</td>
+<td style="text-align: left;">定义页面内容之外的内容。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;audio&gt;</td>
+<td style="text-align: left;">定义声音内容。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;blockquote&gt;</td>
+<td style="text-align: left;">定义长的引用。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;canvas&gt;</td>
+<td style="text-align: left;">定义图形。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;caption&gt;</td>
+<td style="text-align: left;">定义表格标题。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;dd&gt;</td>
+<td style="text-align: left;">定义定义列表中项目的描述。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;div&gt;</td>
+<td style="text-align: left;">定义文档中的节。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;dl&gt;</td>
+<td style="text-align: left;">定义定义列表。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;dt&gt;</td>
+<td style="text-align: left;">定义定义列表中的项目。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;details&gt;</td>
+<td style="text-align: left;">定义元素的细节。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;fieldset&gt;</td>
+<td style="text-align: left;">定义围绕表单中元素的边框。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;figcaption&gt;</td>
+<td style="text-align: left;">定义 figure 元素的标题。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;figure&gt;</td>
+<td style="text-align: left;">定义媒介内容的分组，以及它们的标题。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;footer&gt;</td>
+<td style="text-align: left;">定义 section 或 page 的页脚。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;form&gt;</td>
+<td style="text-align: left;">定义供用户输入的 HTML 表单。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;h1&gt; to &lt;h6&gt;</td>
+<td style="text-align: left;">定义 HTML 标题。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;header&gt;</td>
+<td style="text-align: left;">定义 section 或 page 的页眉。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;hr&gt;</td>
+<td style="text-align: left;">定义水平线。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;legend&gt;</td>
+<td style="text-align: left;">定义 fieldset 元素的标题。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;li&gt;</td>
+<td style="text-align: left;">定义列表的项目。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;menu&gt;</td>
+<td style="text-align: left;">定义命令的列表或菜单。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;meter&gt;</td>
+<td style="text-align: left;">定义预定义范围内的度量。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;nav&gt;</td>
+<td style="text-align: left;">定义导航链接。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;noframes&gt;</td>
+<td style="text-align: left;">定义针对不支持框架的用户的替代内容。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;noscript&gt;</td>
+<td style="text-align: left;">定义针对不支持客户端脚本的用户的替代内容。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;ol&gt;</td>
+<td style="text-align: left;">定义有序列表。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;output&gt;</td>
+<td style="text-align: left;">定义输出的一些类型。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;p&gt;</td>
+<td style="text-align: left;">定义段落。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;pre&gt;</td>
+<td style="text-align: left;">定义预格式文本。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;section&gt;</td>
+<td style="text-align: left;">定义 section。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;table&gt;</td>
+<td style="text-align: left;">定义表格。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;tbody&gt;</td>
+<td style="text-align: left;">定义表格中的主体内容。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;td&gt;</td>
+<td style="text-align: left;">定义表格中的单元。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;tfoot&gt;</td>
+<td style="text-align: left;">定义表格中的表注内容（脚注）。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;th&gt;</td>
+<td style="text-align: left;">定义表格中的表头单元格。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;thead&gt;</td>
+<td style="text-align: left;">定义表格中的表头内容。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;time&gt;</td>
+<td style="text-align: left;">定义日期/时间。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;tr&gt;</td>
+<td style="text-align: left;">定义表格中的行。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;ul&gt;</td>
+<td style="text-align: left;">定义无序列表。</td>
+</tr>
+</tbody>
+</table>
+<p>html中的行内元素：</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">标签</th>
+<th style="text-align: left;">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">&lt;a&gt;</td>
+<td style="text-align: left;">定义锚。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;abbr&gt;</td>
+<td style="text-align: left;">定义缩写。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;acronym&gt;</td>
+<td style="text-align: left;">定义只取首字母的缩写。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;b&gt;</td>
+<td style="text-align: left;">定义粗体字</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;bdo&gt;</td>
+<td style="text-align: left;">定义文字方向。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;big&gt;</td>
+<td style="text-align: left;">定义大号文本。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;br&gt;</td>
+<td style="text-align: left;">定义简单的折行。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;button&gt;</td>
+<td style="text-align: left;">定义按钮 (push button)。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;cite&gt;</td>
+<td style="text-align: left;">定义引用(citation)。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;code&gt;</td>
+<td style="text-align: left;">定义计算机代码文本。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;command&gt;</td>
+<td style="text-align: left;">定义命令按钮。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;dfn&gt;</td>
+<td style="text-align: left;">定义定义项目。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;del&gt;</td>
+<td style="text-align: left;">定义被删除文本。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;em&gt;</td>
+<td style="text-align: left;">定义强调文本。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;embed&gt;</td>
+<td style="text-align: left;">定义外部交互内容或插件。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;i&gt;</td>
+<td style="text-align: left;">定义斜体字。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;img&gt;</td>
+<td style="text-align: left;">定义图像。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;input&gt;</td>
+<td style="text-align: left;">定义输入控件。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;kbd&gt;</td>
+<td style="text-align: left;">定义键盘文本。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;label&gt;</td>
+<td style="text-align: left;">定义 input 元素的标注。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;map&gt;</td>
+<td style="text-align: left;">定义图像映射。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;mark&gt;</td>
+<td style="text-align: left;">定义有记号的文本。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;objec&gt;</td>
+<td style="text-align: left;">定义内嵌对象。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;progress&gt;</td>
+<td style="text-align: left;">定义任何类型的任务的进度。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;q&gt;</td>
+<td style="text-align: left;">定义短的引用。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;samp&gt;</td>
+<td style="text-align: left;">定义计算机代码样本。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;select&gt;</td>
+<td style="text-align: left;">定义选择列表（下拉列表）。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;small&gt;</td>
+<td style="text-align: left;">定义小号文本。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;span&gt;</td>
+<td style="text-align: left;">定义文档中的节。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;strong&gt;</td>
+<td style="text-align: left;">定义强调文本。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;sub&gt;</td>
+<td style="text-align: left;">定义下标文本。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;sup&gt;</td>
+<td style="text-align: left;">定义上标文本。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;textarea&gt;</td>
+<td style="text-align: left;">定义多行的文本输入控件。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;time&gt;</td>
+<td style="text-align: left;">定义日期/时间。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;tt&gt;</td>
+<td style="text-align: left;">定义打字机文本。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;var&gt;</td>
+<td style="text-align: left;">定义文本的变量部分。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;video&gt;</td>
+<td style="text-align: left;">定义视频。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;wbr&gt;</td>
+<td style="text-align: left;">定义可能的换行符。</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+
+    
+</body>
+</html>

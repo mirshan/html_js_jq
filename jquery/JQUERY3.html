@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-3.4.1.js">
+			
+		</script>
+	</head>
+	<body>
+		<div id="box1" style="background-color: #8FBC8F;">
+			Mirs is a good man !
+		</div>
+		<div id="box2">
+			Mirs is a nice man !
+			<p>P1</p>
+			<p>P2等待点击被复制</p>
+			<p>last P等待被替换</p>
+		</div>
+		<div id="box3">
+			Mirs is a handsome man !
+		</div>
+		<input type="text" name="" id="tt" value="Mirs is a good man" />
+		a<input type="radio" name="a" id="" value="1" />
+		b<input type="radio" name="a" id="" value="2" />
+		c<input type="radio" name="a" id="" value="3" />
+		d<input type="radio" name="a" id="" value="4" /><br />
+		cka<input type="checkbox" name="b" id="" value="1" />
+		ckb<input type="checkbox" name="b" id="" value="2" />
+		ckc<input type="checkbox" name="b" id="" value="3" />
+		ckd<input type="checkbox" name="b" id="" value="4" /><br />
+		<button id="btn" value="a" name="box3换颜色" style="border: solid 1px #FF0000;">box3换颜色</button>
+		
+		
+		
+		<script type="text/javascript">
+		$(document).ready(function(){
+		//内容控制
+		var $jqobj=$("div").text()   //获取文本内容,所有内容全部获得
+		console.log($jqobj)
+		var $jqobj=$("#box1").text("change content") //修改文本内容,全部修改，纯文本内容，不可加标签符号
+		$jqobj.html("<h1>html修改时会解析为网页语言</h1>")  //是否解析的对比
+		
+		//对元素值的操作,设置值
+		var $jqobj=$("#tt")
+		$jqobj.val("nice man")
+		
+		var $jqobj=$("input[name=a]").val([2])  //一共筛选了4个，2表示第二个
+		var $jqobj=$("input[name=b]").val([2,3])  //一共筛选了4个，2和3被选中，23是对应的value值
+
+		//节点管理
+		var $jqobj=$("<p style='background-color: #FFC0CB;width: 300px;'>元素内插入</p>")	//创建了一个P结点（内部插）
+		$("div").append($jqobj)  //每个筛选出来的元素都会创建出一个节点来
+		/*除了append外还有其他几种方式：append为所有匹配的元素内容追回内容
+		 * appendTo(content) ：将所有匹配的元素，添加到另一个元素集合中
+		 * prepend(content) ： 往前添加
+		 * prependTo(content) ：往前添加
+		 * */
+		
+		//节点外部插
+		var $jqobj=$("<p style='background-color: #FFFF00;width: 300px;'>元素外插入</p>")	//创建了一个P结点（内部插）
+		$("#box1").after($jqobj) 
+		/*
+		 * after(content):节点后同级插入
+		 * insertAfter(content):同样
+		 * before(content):节点前同级插入
+		 * insertBefore(content):同样
+		 */
+		//删除节点
+		var $jqobj=$("#box2 p:first")	//创建了一个P结点（内部插）
+		$jqobj.remove()
+		/*
+		 * remove()：用于从dom中删除匹配的元素，对象一并删除
+		 * detach()：对象未删除，后面还可以引用
+		 * empty():标签内容清空
+		 */
+		//复制节点：给box1的p绑定一个点击事件，与dom的addEventElement不同的是，最后没有false
+		$("#box2 p:first").bind("click",function(){
+			alert("点击了box2的p标签，准备复制一个P")
+			$(this).clone().insertAfter(this)   //this是DOM对象，如果clone加参数true把所有属性和事件都复制过来，也可以通过点击复制
+		})
+		//替换节点
+		console.log($("#box2 p:last"))
+		$("#box2 p:contains('等待被替换')").bind("click",function(){
+			$("#box2 p:contains('等待被替换')").replaceWith("<div>替换原P标签</div>")
+		})
+		/*
+		 * replaceAll(selector)
+		 * replaceWith(content)
+		 */
+		//遍历结点
+		 $("p").each(function(index){//加index
+		 	$(this).attr("title","我是第"+(index+1)+"个P标签") //加了title属性，
+		 	
+		 })
+		 //addClass和removeClass是单一操作，如果用toggleClass就单次添加，双次去除
+		 
+		 //修改CSS样式属性
+		 $("#btn").bind("click",function(){
+		 	 $("#box3").css("background-color","green")  //传一个值获取，传两个值设置
+		 })
+		
+		
+		
+		})
+		</script>
+	</body>
+</html>

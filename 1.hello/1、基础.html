@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css" >
+			/*给所有P标签设置样式*/
+			p{
+				color: blue;
+			}
+			
+		</style>
+		
+		
+		
+	</head>
+	<body>
+		<strong><i>1、文章每一段落加一个P标签</i></strong><br>
+			2、版权&copy;  &nbsp;&nbsp;   &lt;  &gt;   &quot;<br /> 
+			3、<a href="index.html" target="_blank" >返回首页</a><br>
+			4、<a href="#end" target="_self" name="top">to end 锚点</a><br>
+			5、列表：<br>
+			无序列表：
+			<ul type="circle"> 
+                               <!--
+                               	作者：Mirshan@163.com
+                               	时间：2019-11-13
+                               	描述：type有3个属性，展示前面图标的形状
+                               -->
+                               
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+			有序列表：<br>
+			<ol type="i">
+                         <!--
+                         	作者：Mirshan@163.com
+                         	时间：2019-11-13
+                         	描述：type里有几种类型
+                         -->
+				<li>a</li>
+				<li>b</li>
+				<li>c</li>
+			</ol>
+			定义列表：<br>
+			<dl>
+				<dt>标题1</dt><dt>副标题</dt><dd>内容1</dd><dd>内容1</dd><dd>内容1</dd>
+				<dt>标题2</dt><dd>内容2</dd>
+				<dt>标题3</dt><dd>内容3</dd>
+			</dl>
+			6、<table border="1" bgcolor="darkseagreen" cellspacing="0" cellpadding="3">
+				<tr><th colspan="4">表头</th></tr>
+				<tr><th>姓名</th><th>性别</th><th>年龄</th><th>班级</th></tr>
+				<tr>
+					<td colspan="2">11</td><td>13</td><td>14</td>
+				</tr>
+				<tr>
+					<td>21</td><td>22</td><td rowspan="2">23</td><td>24</td>
+				</tr>
+				<tr>
+					<td>31</td><td>32</td><td>34</td>
+				</tr>
+			</table><br>
+			7、CSS样式<br>
+			a.内部样式 <br />b.外部样式<br />c.内联样式（行内样式、嵌入式样式）<br />
+			行内的优先级最高<br />
+			<hr />
+			内部样式：写到head标签里
+			<style type="text/css">
+				
+			</style>
+			<br />
+			外部样式：写到其他CSS文件里style.css
+			<link rel="stylesheet" type="text/css" href="css/style.css" /><br />
+			行内样式：写到行内标签里 style="color:green"
+			<p style="属性：属性样式值"></p>
+			
+			8、CSS语法：选择器、属性和值
+			<p >内部样式，head起的作用，颜色变化了,如果有外部样式对P做了同属性的修改，内部样式不起作用，目前用的是外部样式表的color</p>
+			<p style="color:green;">行内样式表，使颜色变成了绿色</p>
+			<p >由于优先级的原因，无法使用到内部样式表里对标签进行的定义</p>
+			
+			9、标签分类：块级元素（block 一块一块的独占一行，可以当做一个盒子）、内联元素(inline)，内联块级元素（inline-block图片），区别在于是否独占一行，可以互相转化<br />
+			<span style="width: 500px;height: 50px; display: block; background-color: aquamarine;">内联span元素无法设置宽高，设置后没用,但加了display:block就变成了块元素，宽高可用了</span><br />
+			10、布局, id整个页面唯一，class可重复使用,id在样式表里是#id名{}  <br />
+			<b>注意：样式表里先加上*{
+				padding: 0;
+				margin: 0;
+			}避免无用样式干扰</b><br />
+			11、选择器：<br />
+			元素选择器、ID选择器#id、class选择器.class名、通用符选择器*{}、<br />
+			ID选择器一般定义框架、class选择器一般用于内容、<br />
+			交集选择器：
+			并集选择器：(把h1,div,p的背景都换成一样的颜色)
+			<style type="text/css">
+				h1,div,#c{
+					background-color: red;
+				}
+			</style>
+			<h1 class="a">h1</h1>
+			<div class="b">div</div>
+			<p id="c">p</p>
+			后代选择器：选择器1包含了选择器2，用空格来区分(只改变box2中P的背景色)
+			<style>
+				#box1,#box2{
+				width: 501px;
+				height: 70px;
+				}
+				#box2 p{
+					background-color: #0000FF;
+				}
+			</style>
+			<div id="box1">
+				<p>box1的P颜色不变</p>
+			</div>
+			<div id="box2">
+				<p>后代选择器box2的P换颜色，box1的不动</p>
+			</div>
+			子选择器：儿子变色，孙子不变色。用尖括号表示子选择器<br />
+			<style type="text/css">
+				#outer>p{
+					background-color: green;
+				}
+			</style>
+			
+			<div id="outer">
+				<p>第一个P变色</p>
+				<div id="inner">
+					<p>第二个P不变色</p>
+					
+				</div>
+			</div>
+			伪类选择器：只在a标签中使用，并且有顺序，必须a:link a:visited a:hover a:active
+			<style type="text/css">
+				a:link{color: blueviolet;}     /*链接的状态*/
+				a:visited{color: yellow;}       /*访问过的状态*/
+				a:hover{color: blue;}            /*访问时的状态*/
+				a:active{color: aquamarine;}   /*被激活的状态*/
+				
+			</style>
+			<a href="#">a标签展示伪类选择器的方法</a>			
+			
+			选择器权重：id最高，标签其次，class再次，如果同一标签里有多个选择器里有相同的配置，会按权重来，不重复的会显示出来<br /><br />
+			
+			12、列表CSS声明<br />
+			<style type="text/css">
+				li{
+					list-style: none url(img/1.png) inside;	/*去掉列表前面的点*/
+					/*相当于这3句
+				    list-style: none;
+					list-style-image: url(img/1.png);
+					list-style-position: inside;*/
+				}
+				#backtest{
+					background: url(img/1.png) no-repeat scroll 10px 20px/50px 60px content-box padding-box #eeefee;
+					width: 300px;
+					height: 50px;
+					
+				}
+			</style>
+			<ul>
+				<li>c</li>
+				<li>c++</li>
+				<li>java</li>
+				<li>python</li>
+				<li>swift</li>
+				<li>PHP</li>
+				
+			</ul>
+			<div id="backtest">
+				asdf<br />
+
+			</div>
+			13、css中display:none表示元素隐藏，不占位置，visibility：hidden表示隐藏，但位置占着<br />
+			border-radios:20px;是半径为20的圆<br />
+			color:rgba(0,0,0,0,5) 其中0.5是透明度<br />
+			text-indent:10 是缩进<br />
+			14、折叠菜单<br />
+			<style type="text/css">
+				*{
+					padding: 0;
+					margin: 0;
+				}
+				#menu{
+					width: 200px;
+					margin: 50px;
+				}
+				#menu ul{
+					display: none;
+				}
+				#menu li{
+					list-style: none;
+					list-style-image: none;
+					list-style-position: inside;
+					background: #008000;
+				}
+				/*#menu>li{
+					background-color: aquamarine;
+					line-height: 20px;
+				}*/
+				
+				#menu ul li{
+					background-color: aliceblue;
+				}
+				#menu>li:hover ul{		/*menu下边的li在鼠标经过时ul*/
+					display: block;
+				}
+				
+				
+			</style>
+			<ul id="menu">
+				<li>
+					一层
+					<ul>
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+					</ul>
+				
+				</li>
+				<li>
+					二层
+					<ul>
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+					</ul>
+				</li>
+				<li>
+					三层
+					<ul>
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+					</ul>
+				</li>
+				<li>
+					四层
+					<ul>
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+					</ul>
+				</li>
+			</ul>
+
+			15、当下使用CSS3，未来可以使用Sass 或 lsass<br />
+			16、文本超出宽度时可以用text-overflow来控制显示的样式，例如多出内容显示省略号,但必须与overflow及white-space共同使用才有效<br />
+			<p style="width: 200px;height:50px; overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">
+				我们都有一个家，名字叫中国，兄弟姐妹都很多，景色也不错
+			</p>
+			17、display：inline-block后块元素恢复同行，但有间距，float之后间距消失<br />
+			18、表格：把表格分成thead、tbody、tfoot三部分<br />
+			
+			<table border="" cellspacing="1" cellpadding="0">
+				<thead>
+				<tr><th>姓名</th><th>性别</th><th>年龄</th></tr>
+				</thead>
+				<tbody>
+				<tr><td>Data</td><td>data2</td><td>data3</td></tr>
+				</tbody>
+				<tfoot>
+					学生表格
+				</tfoot>
+			</table>	<br />
+			19、表单：name:名字，action：拼接网址后面的部分如/product,method:提交方式，
+			<form action="/form" method="post">
+				<label for="count">Label点击后鼠标自动聚集至count文本框内</label>
+				<input type="text" name="账号" id="count" value="" placeholder="账号"/>      <!--name是文本框的内容-->
+				<input type="password" name="" id="" value="" placeholder="密码" />  <!--placehoder输入时消失-->
+				<textarea name="" rows="" cols=""></textarea><br />
+				<input type="radio" name="r1"  id="" value="" />选项一					<!--单选name要相同-->
+				<input type="radio" name="r1" id="" value="" />选项二
+				<input type="radio" name="r1" id="" value="" />选项三<br  />
+				<input type="checkbox" name="ch1" id="" value="" disabled/>选项一      <!--disabled是禁用-->
+				<input type="checkbox" name="ch1" id="" value="" />选项二
+				<input type="checkbox" name="ch1" id="" value="" />选项三<br />
+				<select name="se" >
+					<option value="" disabled selected hidden>默认提示信息</option>      <!--默认提示文本-->
+					<option value="">1</option>
+					<option value="">2</option>
+					<option value="">3</option>
+				</select><br />
+				
+				<input type="file" name="" id="" value="上传文件" />
+				<input type="image" name="" id="" value="上传图片" width="100" height="100" />
+					
+				<input type="submit" name="提交" value="提交按钮"/>
+			</form>
+			20、float会使标签从本行浮动到上一层，其他标签会从文档流补上来，变成下一层<br />
+				div里把图片浮云起来，文字会自动补充文档流，实现文字环绕的效果<br />
+				<style type="text/css">
+					#huanrao{
+						width: 600px;
+						height: 200px;
+						background-color: #FFFF00;
+						padding:10px;				/*上右下左都增加10px空间*/
+						line-height: 25px;
+					}
+					#imgi{
+						background-image: url(https://img.meiwen.com.cn/allimg/1609/1-1609252326410-L.jpg);
+						background-size: 100px 100px;
+						background-repeat: no-repeat;
+						height: 100px;
+						width: 100px;
+						float: left;
+						margin-right: 10px;
+						
+					}
+				</style>
+				<div id="huanrao">
+					<div id="imgi">
+						
+					</div>
+					夜，结束了一天的喧嚣后安静下来，伴随着远处路灯那微弱的光。风，毫无预兆地席卷整片旷野，撩动人的思绪万千。星，遥遥地挂在天空之中，闪烁着它那微微星光，不如阳光般灿烂却如花儿般如痴如醉。
+
+　　——题记
+
+　　欲将沉醉换悲凉，清歌莫断肠。这混乱的尘世，究竟充斥了多少绝望和悲伤。你想去做一个勇敢的男子，为爱，为信仰，轰轰烈烈的奋斗一场。你周身充斥着无人可比的灵气和光芒。你有着与伟人比肩的才气和名声，你是那样高傲孤洁的男子。你的一寸狂心未说，已经几度黄昏雨。
+				</div>
+			21、position属性用来严格定位标签位置，但需要在父亲层标签加上position:reletive才能使用
+			<style type="text/css">
+				#p_outer{
+					width: 500px;
+					height: 200px;
+					background-color: hotpink;
+					position: relative;				/*父亲层需要reletive,儿子层绝对定位才生效*/
+				}
+				#p_inner{
+					width: 300px;
+					height: 50px;
+					background-color: darkcyan;	
+					position: absolute;				/*绝对定位*/
+					top: 30px;						/*距离顶部30px*/
+					left:80px;
+				}
+			</style>
+			<div id="p_outer">
+				<div id="p_inner">
+					
+				</div>
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			n、<a href="#top" target="_self" name="end">to top 锚点</a>
+		
+	</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box {
+			width: 800px;
+			height: 600px;
+			border: 1px solid #0000FF;
+			position: relative;
+		}
+		
+		#ball {
+			width: 100px;
+			height: 100px;
+			border-radius: 50px;
+			background-color: greenyellow;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	</style>
+
+	<body>
+		<div id="box">
+			<div id="ball">
+
+			</div>
+		</div>
+		<button onclick="fly()" style="height: 20px; width: 50px; background-color: darkorange; position: absolute; top:110px;">飞翔</button>
+		<script type="text/javascript">
+			var ball = document.getElementById("ball")
+
+			function fly() {
+
+				//				setInterval(function() {
+				//					var w = window.getComputedStyle(ball, null).left //获取的值是字符串型，需要转数字类型,是0px
+				//					w = parseInt(w) //0px转成正数是0，转换时遇到px会停止，只转换数字部分的
+				//					ball.style.left = w + 10 + "px"
+				//
+				//					var h = window.getComputedStyle(ball, null).top //获取的值是字符串型，需要转数字类型,是0px
+				//					h = parseInt(h) //0px转成正数是0，转换时遇到px会停止，只转换数字部分的
+				//					ball.style.top = h + 10 + "px"
+				//				}, 100)
+
+				var ball = document.getElementById("ball")
+				var speedx = 10
+				var speedy = 10
+				setInterval(function() {
+					ball.style.left = ball.offsetLeft + speedx + "px" //横向加
+					ball.style.top = ball.offsetTop + speedy + "px" //纵向加
+					if(ball.offsetTop >= 600 - 100 || ball.offsetTop<=0) {
+						speedy *= -1
+					}
+					if(ball.offsetLeft >= 800 - 100 || ball.offsetLeft<=0) {
+						speedx *= -1
+					}else if(ball.offsetLeft<0){
+						speedx*=-1
+					}
+
+				}, 50)
+
+			}
+		</script>
+	</body>
+
+</html>

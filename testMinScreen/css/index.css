@@ -1,0 +1,25 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    width: 100%;
+}
+#one{
+	width: 200px;
+	height: 100px;
+	background: red;
+	display: inline-block;
+}
+#two{
+	width: 200px;
+	height: 100px;
+	background: green;
+	display: inline-block;
+}
+#three{
+	width: 200px;
+	height: 100px;
+	background: blue;
+	display: inline-block;
+}

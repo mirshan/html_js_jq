@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body style="background-color: yellow; height: 1000px;">
+		<button onclick="back()">返回上一页</button>
+		<button onclick="window.location.href='red.html'">跳至红页</button>
+		<script type="text/javascript">
+			function back(){
+				window.history.back()
+			}
+			
+			//延时定时器
+			window.setTimeout(function(){
+				console.log("延时定时器，只执行一次")
+			},1000)
+		</script>
+	</body>
+</html>

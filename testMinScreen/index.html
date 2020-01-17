@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<!--pc屏幕-->
+    <link rel="stylesheet" type="text/css" href="css/index.css" media="screen and (min-width:1201px)" />
+    <!--小屏幕-->
+    <link rel="stylesheet" type="text/css" href="css/phone.css" media="screen and (max-width:1199px)" />
+    <!--小小屏幕-->
+    <link rel="stylesheet" type="text/css" href="css/min.css" media="screen and (max-width:700px)" />
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<div id="one">1</div>
+			<div id="two">2</div>
+			<div id="three">3</div>
+		</div>
+	</body>
+</html>
+
+
+
+
+
+
+/* 大屏幕 ：大于等于1200px*/<br>
+@media (min-width: 1200px) { ... }<br><br>
+ 
+/*默认*/<br>
+@media (min-width: 980px){...}<br><br>
+ 
+/* 平板电脑和小屏电脑之间的分辨率 */<br>
+@media (min-width: 768px) and (max-width: 979px) { ... }<br><br>
+ 
+/* 横向放置的手机和竖向放置的平板之间的分辨率 */<br>
+@media (max-width: 767px) { ... }<br><br>
+ 
+/* 横向放置的手机及分辨率更小的设备 */<br>
+@media (max-width: 480px) { ... }<br><br>
